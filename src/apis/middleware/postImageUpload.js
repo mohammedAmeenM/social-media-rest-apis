@@ -97,8 +97,8 @@ const uploadImage = (req, res, next) => {
       });
 
       next(); 
-    } catch (uploadErr,'hiiiiiiiiii') {
-      console.log(uploadErr);
+    } catch (uploadErr) {
+      console.log(uploadErr,'hiiiiiiiiiiii');
       res.status(500).json({
         status: "fail",
         message: "Error uploading file to Cloudinary",

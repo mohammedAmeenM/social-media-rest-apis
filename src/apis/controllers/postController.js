@@ -5,7 +5,7 @@ const User = require("../model/userSchema");
 const createPost = async (req, res) => {
   try {
     const { userId, text, image } = req.body;
-    console.log(userId);
+    console.log(text,image,userId,'hiii')
     if (!text && image) {
       return res.status(400).json({ error: "text or image must be provided" });
     }
@@ -20,6 +20,7 @@ const createPost = async (req, res) => {
       post: newPost,
     });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message });
     console.error("Error in create post API:", error);
   }

@@ -73,9 +73,11 @@ const uploadImage = (req, res, next) => {
   console.log("multersss");
   upload.single("image")(req, res, async (err) => {
     if (err) {
+      console.log(err.message,'helloooooo err')
       return res.status(400).json({ message: err.message });
     }
     if (!req.file) {
+      console.log('no file ')
       return res.status(400).json({ message: "No file uploaded" });
     }
 

@@ -70,7 +70,7 @@ cloudinary.config({
 });
 
 const uploadImage = (req, res, next) => {
-  console.log("multersss");
+  console.log("multersss",req);
   upload.single("image")(req, res, async (err) => {
     if (err) {
       console.log(err.message,'helloooooo err')
